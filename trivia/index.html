@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/style.css" />
+</head>
+<body>
+<div class="wrapper" align="center">
+    <div class="navbar">navigation</div>
+    <div class="content">
+        <ul class="cards-wrapper">
+            <li class="card">112 12 3 12</li><li class="card">2123 123 123 12</li><li class="card">3 123123 123</li>
+        </ul>
+    </div>
+    <span class="mid-banner">mid r</span>
+</div>
+
+<script src="js/lib/jquery.min.js"></script>
+
+<script>
+    $(function() {
+     // Handler for .ready() called.
+        // we're gonna resize some stuff
+        var wrapper = $('.wrapper'),
+            cards = $('.card'),
+            wrapper_height, wrapper_width,
+            card_width, card_height;
+                
+        if( wrapper )
+        {
+            wrapper_width = parseInt(wrapper.css('width'));
+            
+            card_width = parseInt(Math.round( wrapper_width * 0.325 ));
+            card_height = parseInt(Math.round( card_width * 1.25 ));
+            
+            cards.css({'width': card_width + 'px','height': card_height + 'px'} );
+            
+            console.log( cards.css("height") );
+        }
+
+    });
+</script>
+</body>
+</html>

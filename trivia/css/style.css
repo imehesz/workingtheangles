@@ -1,0 +1,55 @@
+.wrapper{
+    position:relative;
+    width: 100%;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.navbar{
+    position:absolute;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 3px;
+    width: 100%;
+    opacity:0.7;
+    filter:alpha(opacity=70);    
+}
+
+.navbar:hover{
+    opacity:1;
+    filter:alpha(opacity=100);        
+}
+
+.mid-banner{
+    position: absolute;
+    bottom: 5%;
+    background-color: #000;
+    color: #fff;
+    padding: 3px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.content{
+    margin-top: -70px;
+}
+
+.cards-wrapper{
+    width: 100%;    
+    margin:0 auto;
+}
+
+.card{
+    background-color: #006400; 
+    border: 1px solid #ddd;
+    width: 33%;
+    float:left;
+    }
+
+.card:hover{
+    border: 1px solid #777;
+}
