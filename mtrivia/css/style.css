@@ -1,0 +1,93 @@
+html{
+    height: 100%;
+    font-size: 12px;
+}
+
+.home-page, .game-over-page{
+    margin: 10%;
+    border: 1px solid #ddd;
+}
+
+.red{
+    color: #f00;
+}
+
+.info-bar{
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.info-bar:hover{
+    opacity: 1;
+}
+
+body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    height: 100%;            
+    overflow: hidden;
+    position: relative;
+}
+
+.card{
+    float:left;
+    width: 33.3%;
+    height: 100%;
+    background-color: #000;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.card img{
+    width: 95%;
+    height: 90%;    
+}
+
+.caption-wrapper{
+    width: 100%;
+    text-align:center;
+    position: absolute;
+    bottom: 10%;
+}
+
+.caption{
+    padding: 5px 10px;
+    bottom: 10%;
+    background-color: #000;
+    color: yellow;
+    width: 90%;
+    margin:0 auto;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 4000px) {
+    .caption, .info-bar{
+        font-size: 175%;
+    }
+}
+
+
+@media only screen and (max-width: 720px) {
+    .caption, .info-bar{
+        font-size: 150%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .caption, .info-bar{
+        font-size: 120%;
+    }
+}
