@@ -4,6 +4,8 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>trivia - jsFiddle demo by imehesz</title>
   
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+      <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
       <link href="css/style.css" rel="stylesheet" type="text/css">
 
       <script type='text/javascript' src="js/angular-1.0.1.min.js"></script>
@@ -15,24 +17,35 @@
   <body ng:app>
     <div class="wrapper">
         <div ng-controller="MovieController">
-            <div class="info-bar">
-                Lives: <span class="red">{{lives}}</span> Points: {{points}}
-            </div>
-            <div class="caption-wrapper">
-                <div class="caption">{{quote.quote}}</div>
-            </div>        
             <div class="device-display">
                 <!-- HOME -->
-                <div id="home" class="home-page page">
-                    <h1>Welcome to IKnowQuotes mobile.</h1>
-                    <button ng-click="letsPlay();">Let's Play</button>
+                <div id="home" class="home-page page" style="height:100%;">
+                    <img src="css/images/ikq-logo.png" />
+					<div class="alert alert-block">
+						<div>
+							<p>
+							Congratulations! You, through the miraculous ways of the Internet, actually found us!</p>
+
+							<p>
+							So what is this? What are we doing here? It is a simple online movie trivia game. Nothing more, nothing less. It helps you to feel good about yourself ... if you know movies and movie quotes. And who doesn't?'
+							</p>
+						</div>
+					</div>
+                    <button ng-click="letsPlay();" class="btn btn-success btn-large">Let's Play</button>
                 </div>
                 <div id="game" class="movies-wrapper page">
-                        <div class="card" ng-repeat="movie in movies_in_trivia" ng-click="sendAnswer();">
-                            <div class="movie" title="{{movie.title}}" data-movie-id="{{movie.id}}">
-                                <img src="{{movie.image}}" />
-                            </div>
+					<div class="info-bar">
+						Lives: <span class="red">{{lives}}</span> Points: {{points}}
+					</div>
+					<div class="caption-wrapper">
+						<div class="caption">{{quote.quote}}</div>
+					</div>        
+
+                    <div class="card" ng-repeat="movie in movies_in_trivia" ng-click="sendAnswer();">
+                    	<div class="movie" title="{{movie.title}}" data-movie-id="{{movie.id}}">
+                        	<img src="{{movie.image}}" />
                         </div>
+                    </div>
                 </div>
                 <!-- GAME OVER -->
                 <div id="game-over" class="game-over-page page">
