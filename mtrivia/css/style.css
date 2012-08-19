@@ -17,6 +17,10 @@ html{
     color: #f00;
 }
 
+.black{
+	color: #000;
+}
+
 .info-bar{
     background-color: #000;
     color: #fff;
@@ -24,7 +28,6 @@ html{
     top: 0;
     width: 100%;
     padding: 2px;
-    opacity: 0.5;
     text-align: center;
 }
 
