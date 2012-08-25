@@ -26,48 +26,7 @@ function MovieController($scope){
     $scope.lives = '';
 	$scope.lives_lost = '';
     
-    $scope.movies = [
-        {
-            id: 1,
-            title: "The Matrix",
-            year: 1999,
-            image: "images/matrix.jpg",
-            quotes:[
-                {id: "11",quote: "I know why you're here, Neo. I know what you've been doing..."},
-                {id: "12",quote: "A black cat went past us, and then another that looked just like it."}
-            ]
-        },
-        {
-            id: 2,
-            title: "The Big Lebowski",
-            year: 1998,
-            image: "images/the_big_lebowski_6.jpg",
-            quotes:[
-                {id: "21",quote: "Oh, the usual. I bowl. Drive around. The occasional acid flashback."},
-                {id: "22",quote: "That's a great plan, Walter."}
-            ]            
-        },
-        {
-            id: 3,
-            title: "Kill Bill",
-            year: 2003,
-            image: "images/kill_bill.jpeg",
-            quotes:[
-                {id: "31",quote: "Do you find me sadistic?"},
-                {id: "32",quote: "Except you, Sofie! You stay right where you are!"}
-            ]            
-        },
-        {
-            id: 4,
-            title: "Interview with the Vampire",
-            year: 1994,
-            image: "images/Interview-With-A-Vampire.jpg",
-            quotes:[
-                {id: "41",quote: "1791 was the year it happened. I was 24, younger than you are now."},
-                {id: "42",quote: "Aux contraire mon cher, he could eat the whole colony."}
-            ]            
-        }
-    ];
+    $scope.movies = MOVIES;
     
     $scope.movies_in_trivia = [];
     $scope.startTrivia = function(){
