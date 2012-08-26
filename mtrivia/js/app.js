@@ -1,4 +1,5 @@
 // vomiting into the global space
+var score_list = TAFFY();
 var myApp = angular.module('myApp', []);
 
 function gotoPage( page ) {
@@ -79,6 +80,11 @@ function MovieController($scope){
                     $scope.lives_count--;
                     if( $scope.lives_count < 1 )
                     {
+						score_list.insert({score: $scope.points, date: new Date()});
+						$('#score-list').html('');
+						score_list().limit(10).order('score desc').each( function( r ){
+							$('#score-list').append( '<div>' + r.date + ' ' + r.score  + '</div>' );
+						});
                         gotoPage( 'game-over' );
                     }
                 }

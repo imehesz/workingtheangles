@@ -50,9 +50,11 @@
                 <div id="game-over" class="game-over-page page">
 					<h1>Game Over</h1>
 					<div class="alert alert-block">
-						<p>
+						<div id="current-score">
                     	  Your score: {{points}}
-						</p>
+						</div>
+						<div id="score-list">
+						</div>
 					</div>
                    	<button ng-click="letsPlay();" class="btn btn-success btn-large">Play Again</button>
                 </div>
@@ -62,6 +64,7 @@
 </body>
 
 
+<script type='text/javascript' src="js/taffy.js"></script>
 <script type='text/javascript' src="js/data.js"></script>
 <script type='text/javascript' src="js/app.js"></script>
 

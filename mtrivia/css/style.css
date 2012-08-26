@@ -4,6 +4,10 @@ html{
 	color: #fff;
 }
 
+#score-list{
+	padding-top: 1%;
+}
+
 .home-page, .game-over-page{
 	margin: 0 auto;
 	width: 90%;
@@ -86,6 +90,14 @@ body{
     .caption, .info-bar{
         font-size: 175%;
     }
+
+	#current-score{
+		font-size: 200%;
+	}
+
+	#score-list{
+		font-size: 125%;
+	}
 }
 
 
