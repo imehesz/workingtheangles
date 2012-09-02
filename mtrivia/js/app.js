@@ -1,5 +1,29 @@
 // vomiting into the global space
+
+var IKNOW = {
+	config: {
+		maxlife: 5
+	},
+
+	formatNumber: function(nStr) {
+				  nStr += '';
+				  x = nStr.split('.');
+				  x1 = x[0];
+				  x2 = x.length > 1 ? '.' + x[1] : '';
+				  var rgx = /(\d+)(\d{3})/;
+				  while (rgx.test(x1)) {
+					x1 = x1.replace(rgx, '$1' + ',' + '$2');
+				  }
+				  return x1 + x2;
+			   }
+};
+
+// TODO if there are custom settings overwrite it here ...
+//_.extend( IKNOW, {config:{maxlife: 5}} );
+
 var score_list = TAFFY();
+score_list.store( "iknowquotes" );
+
 var myApp = angular.module('myApp', []);
 
 function gotoPage( page ) {
@@ -23,7 +47,7 @@ function MovieController($scope){
     $scope.timer = 0;
     $scope.quote = '';
     $scope.points = 0;
-    $scope.lives_count = 10;
+    $scope.lives_count = IKNOW.config.maxlife || 10;
     $scope.lives = '';
 	$scope.lives_lost = '';
     
@@ -43,7 +67,7 @@ function MovieController($scope){
 
     $scope.letsPlay = function() {
         $scope.points = 0;
-        $scope.lives_count = 10;
+        $scope.lives_count = IKNOW.config.maxlife || 10;
         $scope.startTrivia();
 
         gotoPage( 'game' );
@@ -72,24 +96,28 @@ function MovieController($scope){
                         console.log('meh?');
                         console.log( 'points: ',  $scope.points );
                         $scope.points += 15 - answered_in;
-                                                console.log( 'points: ',  $scope.points );
                     }
-                    console.log('OK!');
                 }
                 else{
                     $scope.lives_count--;
                     if( $scope.lives_count < 1 )
                     {
-						score_list.insert({score: $scope.points, date: new Date()});
+						score_list.insert({score: $scope.points, date: new Date().toString() });
 						$('#score-list').html('');
 						score_list().limit(10).order('score desc').each( function( r ){
-							$('#score-list').append( '<div>' + r.date + ' ' + r.score  + '</div>' );
+							$('#score-list').append( _.template( 
+								$('#scorlisttpl').html(), 
+								{ 
+								  score: IKNOW.formatNumber(r.score),
+								  scoredate: moment( r.date ).fromNow()
+								} 
+							) );
+							
 						});
                         gotoPage( 'game-over' );
                     }
                 }
 
-                console.log( 'movie ID: ' + movie_id, 'quote ID: ' + quote_id );      
                 $scope.startTrivia();
             }
                                            
@@ -108,7 +136,7 @@ function MovieController($scope){
 		  // TODO this is gettho, i tried to simply render HTML in a view and it didn't work
 		  // loook at angular sanitize and HTML binding
 		  var hearts_dark = '';
-		  for( i=0; i<10-num; i++ ) {
+		  for( i=0; i<(IKNOW.config.maxlife || 10)-num; i++ ) {
             hearts_dark += '♥';
 		  }
 

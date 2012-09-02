@@ -86,13 +86,47 @@ body{
     font-weight: bolder;
 }
 
+#score-list {
+	display: table;
+	border-collapse: collapse;
+	width: 20%;
+	margin: 0 auto;
+	margin-top: 3%;
+	text-align: right;
+}
+
+.scorelist-item {
+	display: table-row;
+}
+
+.scorelist-date {
+	font-size: 70%;
+	color: #aaa;
+	display: table-cell;
+}
+
+.scorelist-score {
+	font-size: 125%;
+	width: 2%;
+	display: table-cell;
+	text-align: right;
+	padding: 0 3%;
+}
+
+#current-score {
+	border-bottom: 1px solid #aaa;
+	font-weight: bolder;
+	padding-bottom: 1%;
+}
+
 @media only screen and (max-width: 4000px) {
     .caption, .info-bar{
         font-size: 175%;
+		line-height: 125%;
     }
 
 	#current-score{
-		font-size: 200%;
+		font-size: 225%;
 	}
 
 	#score-list{
